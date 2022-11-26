@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatAutocompleteTrigger } from '@angular/material';
 
 @Component({
   selector: 'oh-date-picker',
@@ -9,7 +9,7 @@ import { MatAutocompleteTrigger } from '@angular/material';
   encapsulation: ViewEncapsulation.None
 })
 
-export class OHDatePickerComponent implements OnInit {
+export class OhDatePickerComponent implements OnInit {
 
   @Output() valueChange = new EventEmitter<any>();
 

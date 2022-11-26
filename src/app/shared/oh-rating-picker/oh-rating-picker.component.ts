@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
   encapsulation: ViewEncapsulation.None
 })
 
-export class OHRatingPickerComponent implements OnInit {
+export class OhRatingPickerComponent implements OnInit {
 
   @Output() valueChange = new EventEmitter<any>();
 

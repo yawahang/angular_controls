@@ -1,31 +1,31 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import {
-  MatToolbarModule, MatIconModule,
-  MatCheckboxModule, MatTooltipModule, MatInputModule, MatMenuModule, MatButtonModule
-} from '@angular/material';
-import { OHTreeViewComponent } from './oh-tree-view.component';
+import { OhTreeViewComponent } from './oh-tree-view.component';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
-    OHTreeViewComponent
+    OhTreeViewComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
-    MatToolbarModule,
-    MatIconModule,
+    // MatToolbarModule,
     MatCheckboxModule,
     MatTooltipModule,
-    MatInputModule,
+    MatIconModule,
     MatMenuModule,
     MatButtonModule
   ],
-  exports: [OHTreeViewComponent],
+  exports: [OhTreeViewComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
 
-export class OHTreeViewModule {
+export class OhTreeViewModule {
 
 }

@@ -1,13 +1,13 @@
-import { OHRatingPickerComponent } from './oh-rating-picker.component';
+import { OhRatingPickerComponent } from './oh-rating-picker.component';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import {
-  MatTooltipModule, MatFormFieldModule, MatIconModule
-} from '@angular/material';
 import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
-    OHRatingPickerComponent
+    OhRatingPickerComponent
   ],
   imports: [
     CommonModule,
@@ -15,10 +15,10 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     MatIconModule
   ],
-  exports: [OHRatingPickerComponent],
+  exports: [OhRatingPickerComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
 
-export class OHRatingPickerModule {
+export class OhRatingPickerModule {
 
 }

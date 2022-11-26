@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
-import { MatTableDataSource, MatAutocompleteTrigger, MatSort } from '@angular/material';
+import { MatSort } from '@angular/material/sort';
+import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'oh-select',
@@ -9,7 +11,7 @@ import { MatTableDataSource, MatAutocompleteTrigger, MatSort } from '@angular/ma
   encapsulation: ViewEncapsulation.None
 })
 
-export class OHSelectComponent implements OnInit {
+export class OhSelectComponent implements OnInit {
 
   @Output() valueChange = new EventEmitter<any>();
 

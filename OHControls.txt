@@ -35,3 +35,13 @@ RATE PICKER
 	- Full and half star rating
 	- Custom color and background for rating stars
 	- 
+	
+Table
+	- Dynamic table
+	- Column lock
+	- Row actions
+	- Row Selection
+	- Excel export
+	- Client & Server Side paging
+	- Client & Server Side filter
+	- 

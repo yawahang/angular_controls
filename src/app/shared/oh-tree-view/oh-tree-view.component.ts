@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   encapsulation: ViewEncapsulation.None
 })
 
-export class OHTreeViewComponent implements OnInit, OnDestroy {
+export class OhTreeViewComponent implements OnInit, OnDestroy {
 
   subs: Subscription = new Subscription();
 
