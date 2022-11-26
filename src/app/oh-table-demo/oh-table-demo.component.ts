@@ -17,7 +17,7 @@ export class OhTableDemoComponent implements OnInit {
       totalRows: 0,
     },
     loading: true,
-    fileName: 'Company_Export',
+    fileName: 'Employee_Export',
     option: {
       searchText: '',
       filter: {
@@ -47,7 +47,7 @@ export class OhTableDemoComponent implements OnInit {
   // Grid Start
   onRowDblClick(row: any) {
     this.selectedRow = { ...row };
-    console.log('Edit');
+    // edit form here
   }
 
   onRowClick(row: any) {
@@ -58,7 +58,7 @@ export class OhTableDemoComponent implements OnInit {
     if (event) {
       this.gridConfig.option.offset = event.offset;
       this.gridConfig.option.pageSize = event.pageSize;
-      console.log('get grid data from server');
+      // get grid data from server
     }
   }
 
@@ -66,14 +66,14 @@ export class OhTableDemoComponent implements OnInit {
     if (event) {
       this.gridConfig.option.sortBy = event.sortBy;
       this.gridConfig.option.sortOrder = event.sortOrder;
-      console.log('get grid data from server');
+      // get grid data from server
     }
   }
 
   onRowActionClick(event: any) {
-    if (event && event.action  && event.row) {
+    if (event && event.action && event.row) {
       this.selectedRow = { ...event.row };
-      switch (event.action.NavigationAction ) {
+      switch (event.action.NavigationAction) {
         case 'Edit':
           console.log('Edit');
           break;

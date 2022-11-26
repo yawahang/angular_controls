@@ -14,6 +14,6 @@ import { OhTableSelectionDirective } from "./oh-table-row-selection.directive";
         OhTableSelectionDirective
     ]
 })
-export class MatRowSelectionDirectiveModule {
+export class OhTableRowSelectionDirectiveModule {
 
 }

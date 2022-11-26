@@ -11,10 +11,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatRowSelectionDirectiveModule } from '../oh-table-row-selection/oh-table-row-selection.module';
 import { ExcelExportService } from '../excel-export.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { OhTableComponent } from './oh-table.component';
+import { OhTableRowSelectionDirectiveModule } from '../oh-table-row-selection/oh-table-row-selection.module';
 
 @NgModule({
   declarations: [OhTableComponent],
@@ -26,13 +26,13 @@ import { OhTableComponent } from './oh-table.component';
     MatTooltipModule,
     MatProgressBarModule,
     MatMenuModule,
-    MatRowSelectionDirectiveModule,
     MatCheckboxModule,
     MatIconModule,
     ResizableModule,
     DragDropModule,
     MatDialogModule,
     MatButtonModule,
+    OhTableRowSelectionDirectiveModule,
   ],
   providers: [ExcelExportService],
   exports: [OhTableComponent],

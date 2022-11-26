@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { OhTableDemoComponent } from './oh-table-demo/oh-table-demo.component';
+import { OhTableDemoModule } from './oh-table-demo/oh-table-demo.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,20 @@ import { OhTableDemoComponent } from './oh-table-demo/oh-table-demo.component';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
+    HttpClientModule, 
+    FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'oh-table-demo', component: OhTableDemoComponent },
       // { path: 'oh-date-picker', component: OhDatePickerComponent },
       // { path: 'oh-rating-picker', component: OhRatingPickerComponent },
       // { path: 'oh-tree-view', component: OhTreeViewComponent },
-    ]), 
+    ]),
+
+    // import pages
+    OhTableDemoModule,
+
+    // import pages
   ],
   providers: [],
   bootstrap: [AppComponent]

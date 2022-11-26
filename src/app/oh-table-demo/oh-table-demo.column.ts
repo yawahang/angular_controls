@@ -1,6 +1,5 @@
 import { MvOhTableColumn } from '../shared/oh-table/oh-table/oh-table.model';
 
- 
 export const gridColumns: MvOhTableColumn[] = [
     {
         "name": "action",
@@ -14,28 +13,18 @@ export const gridColumns: MvOhTableColumn[] = [
         "type": "text"
     },
     {
-        "name": "description",
-        "display": "Description",
+        "name": "gender",
+        "display": "Gender",
         "type": "text"
-    }, 
+    },
     {
-        "name": "quantity",
-        "display": "Quantity",
+        "name": "company",
+        "display": "Company",
+        "type": "text"
+    },
+    {
+        "name": "age",
+        "display": "Age",
         "type": "number"
-    },
-    {
-        "name": "office",
-        "display": "Office",
-        "type": "text"
-    },
-    {
-        "name": "modifiedDate",
-        "display": "Modified Date",
-        "type": "dateTime"
-    },
-    {
-        "name": "modifiedBy",
-        "display": "Modified By",
-        "type": "text"
     }
 ];
