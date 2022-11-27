@@ -2,6 +2,8 @@ import { MvOhTablePaging, MvOhTableConfig } from '../shared/oh-table/oh-table/oh
 import { Component, OnInit } from '@angular/core';
 import { gridColumns } from './oh-table-demo.column';
 import { gridData } from './oh-table-demo.data';
+import { MatDialog } from '@angular/material/dialog';
+import { TableActionFormDialog } from './table-action-form.component';
 
 @Component({
   selector: 'oh-table-demo',
@@ -35,6 +37,8 @@ export class OhTableDemoComponent implements OnInit {
 
   selectedRow: any = <any>{};
   // Grid End
+
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.gridConfig.columns = gridColumns;
@@ -74,11 +78,23 @@ export class OhTableDemoComponent implements OnInit {
     if (event && event.action && event.row) {
       this.selectedRow = { ...event.row };
       switch (event.action.NavigationAction) {
-        case 'Edit':
-          console.log('Edit');
+        case 'Add':
+          this.openFormDialog(event.action.NavigationAction);  
+          case 'Edit':
+          this.openFormDialog(event.action.NavigationAction); 
           break;
       }
     }
+  }
+
+  openFormDialog(action: string) {
+    const dialogRef = this.dialog.open(TableActionFormDialog, {
+      width: '250px',
+      data: { action: action },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
   // Grid End
 

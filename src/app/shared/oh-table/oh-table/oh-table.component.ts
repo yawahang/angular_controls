@@ -207,17 +207,20 @@ export class OhTableComponent implements OnInit, OnDestroy {
   }
 
   pageChange(e: PageEvent) {
-    this.loading = true;
     if (this.gridConfig) {
       this.gridConfig.option.pageSize = e.pageSize || 10;
       this.gridConfig.option.offset =
         (e.pageIndex || 0) * this.gridConfig.option.pageSize;
     }
     this.currentSize = e.pageSize * e.pageIndex;
-    this.onPageChange.emit({
-      offset: this.gridConfig.option.offset,
-      pageSize: this.gridConfig.option.pageSize,
-    });
+
+    if (this.gridConfig.option.serverSide) {
+      this.loading = true;
+      this.onPageChange.emit({
+        offset: this.gridConfig.option.offset,
+        pageSize: this.gridConfig.option.pageSize,
+      });
+    }
   }
 
   sortChange(e: Sort) {
@@ -287,31 +290,21 @@ export class OhTableComponent implements OnInit, OnDestroy {
   }
 
   getNavigationAction() {
+
+    // sample nav action data (use const data or fetch from server)
     let navActList: MvNavigationActionList[] = [
       {
         navigationActionId: 33,
         navigationAction: 'Add',
         icon: 'add_circle',
-        showInGrid: false,
+        showInGrid: true,
       },
       {
         navigationActionId: 34,
         navigationAction: 'Edit',
         icon: 'edit',
         showInGrid: true,
-      },
-      {
-        navigationActionId: 35,
-        navigationAction: 'Import',
-        icon: 'cloud_upload',
-        showInGrid: false,
-      },
-      {
-        navigationActionId: 36,
-        navigationAction: 'Refresh',
-        icon: 'refresh',
-        showInGrid: false,
-      },
+      }
     ];
 
     this.navigationAction = navActList.filter(

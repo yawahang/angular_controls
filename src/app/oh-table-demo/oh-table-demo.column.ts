@@ -5,6 +5,13 @@ export const gridColumns: MvOhTableColumn[] = [
         "name": "action",
         "display": "Actions",
         "type": "action",
+        "actionIcon": "queue",
+        "sticky": true
+    },
+    {
+        "name": "sn",
+        "display": "SN",
+        "type": "sn",
         "sticky": true
     },
     {
@@ -26,5 +33,5 @@ export const gridColumns: MvOhTableColumn[] = [
         "name": "age",
         "display": "Age",
         "type": "number"
-    }
+    },
 ];

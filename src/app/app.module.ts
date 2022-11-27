@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { OhTableDemoComponent } from './oh-table-demo/oh-table-demo.component';
 import { OhTableDemoModule } from './oh-table-demo/oh-table-demo.module';
 import { FormsModule } from '@angular/forms';
+import { CustomIconService } from './shared/oh-table/custom-icon.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule, 
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -36,7 +37,7 @@ import { FormsModule } from '@angular/forms';
 
     // import pages
   ],
-  providers: [],
+  providers: [CustomIconService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -19,6 +19,7 @@ export interface MvOhTableOption {
   pageSize?: number;
   sortBy?: string;
   sortOrder?: string;
+  serverSide?: boolean;
 }
 
 export interface MvOhTablePaging {
@@ -37,6 +38,7 @@ export interface MvOhTableColumn {
   name: string; // column name
   display?: string; // column display name
   type: string; // Action (For grid inline row actions), Text, Number, Percent, Money, Date, DateTime, CheckBox, Template
+  actionIcon?: string; // action column row icon class name (optional)
   templateColumns?: string[]; // TemplateColumn is the list of columns which is to be shown as template in current column
   /*
         Formats are added by default, use this property if custom format needed
