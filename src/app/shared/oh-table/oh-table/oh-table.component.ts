@@ -162,7 +162,6 @@ export class OhTableComponent implements OnInit, OnDestroy {
 
   navigationAction: MvNavigationActionList[] = [];
   dblClickNavigationAction: string | undefined;
-  gridRowActionExpanded = false; // true = inline icon actions, false = menu actions
 
   rowTooltip = '';
 
@@ -202,13 +201,12 @@ export class OhTableComponent implements OnInit, OnDestroy {
       },
     };
     this.noRecordMessage = 'No records found!';
-    this.pageSizeOptions = [10, 25, 50, 100];
-    this.gridRowActionExpanded = false;
+    this.pageSizeOptions = [5, 10, 25, 50, 100];
   }
 
   pageChange(e: PageEvent) {
     if (this.gridConfig) {
-      this.gridConfig.option.pageSize = e.pageSize || 10;
+      this.gridConfig.option.pageSize = e.pageSize || 5;
       this.gridConfig.option.offset =
         (e.pageIndex || 0) * this.gridConfig.option.pageSize;
     }
@@ -224,16 +222,19 @@ export class OhTableComponent implements OnInit, OnDestroy {
   }
 
   sortChange(e: Sort) {
-    this.loading = true;
     if (this.gridConfig) {
       this.gridConfig.option.sortBy =
         e.active || this.gridConfig.option.sortBy;
       this.gridConfig.option.sortOrder = e.direction || 'ASC';
     }
-    this.onSortChange.emit({
-      sortBy: this.gridConfig.option.sortBy,
-      sortOrder: this.gridConfig.option.sortOrder,
-    });
+
+    if (this.gridConfig.option.serverSide) {
+      this.loading = true;
+      this.onSortChange.emit({
+        sortBy: this.gridConfig.option.sortBy,
+        sortOrder: this.gridConfig.option.sortOrder,
+      });
+    }
   }
 
   setTableDataSource() {
@@ -340,10 +341,6 @@ export class OhTableComponent implements OnInit, OnDestroy {
       ? this.selection.clear()
       : this.dataSource.data.forEach((row) => this.selection.select(row));
     this.onCheckAll.emit(this.selection.selected);
-  }
-
-  rowActionHeaderClick() {
-    this.gridRowActionExpanded = !this.gridRowActionExpanded;
   }
 
   // Column Resize

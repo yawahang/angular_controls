@@ -26,7 +26,7 @@ export class OhTableDemoComponent implements OnInit {
         statusIdList: [],
       },
       offset: 0,
-      pageSize: 10,
+      pageSize: 5,
       sortBy: 'name',
       sortOrder: 'ASC',
     },
@@ -52,6 +52,7 @@ export class OhTableDemoComponent implements OnInit {
   onRowDblClick(row: any) {
     this.selectedRow = { ...row };
     // edit form here
+    this.openFormDialog(row);
   }
 
   onRowClick(row: any) {
@@ -77,20 +78,19 @@ export class OhTableDemoComponent implements OnInit {
   onRowActionClick(event: any) {
     if (event && event.action && event.row) {
       this.selectedRow = { ...event.row };
-      switch (event.action.NavigationAction) {
+      switch (event.action.navigationAction) {
         case 'Add':
-          this.openFormDialog(event.action.NavigationAction);  
-          case 'Edit':
-          this.openFormDialog(event.action.NavigationAction); 
+          this.openFormDialog(event);
+        case 'Edit':
+          this.openFormDialog(event);
           break;
       }
     }
   }
 
-  openFormDialog(action: string) {
+  openFormDialog(event: any) {
     const dialogRef = this.dialog.open(TableActionFormDialog, {
-      width: '250px',
-      data: { action: action },
+      data: { data: event },
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -60,5 +60,5 @@ export interface MvOhTableColumn {
    */
   suffix?: string;
   hidden?: boolean; // hidden columns
-  width?: number; // column width
+  minWidth?: number; // column min width in px
 }

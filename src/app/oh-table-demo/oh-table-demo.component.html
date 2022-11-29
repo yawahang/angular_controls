@@ -1,5 +1,41 @@
-<!-- Grid -->
-<oh-table [config]="gridConfig" (onRowActionClick)="onRowActionClick($event)" (onRowClick)="onRowClick($event)"
-  (onRowDblClick)="onRowDblClick($event)" (onPageChange)="onPageChange($event)" (onSortChange)="onSortChange($event)">
-</oh-table>
-<!-- Grid -->
+<!-- Grid Normal-->
+<div class="row">
+  <h4>Material table with ready to use features</h4>
+  <hr />
+  <oh-table [config]="gridConfig" (onRowActionClick)="onRowActionClick($event)" (onRowClick)="onRowClick($event)"
+    (onRowDblClick)="onRowDblClick($event)" (onPageChange)="onPageChange($event)" (onSortChange)="onSortChange($event)"
+    [rowTemplateOption]="{
+      gender: genderTpl
+    }">
+  </oh-table>
+
+  <ng-template #genderTpl let-element>
+    <div class="row-cell-template-wrapper">
+      <span *ngIf="element?.gender !== '' && element?.gender.toLowerCase() !== 'male'">
+        <mat-icon>male</mat-icon>
+      </span>
+      <span *ngIf="element?.gender !== '' && element?.gender.toLowerCase() !== 'female'">
+        <mat-icon>female</mat-icon>
+      </span>
+    </div>
+  </ng-template>
+
+  <h5 class=" pt-5">Selected row</h5>
+  <hr />
+  <pre><p>{{this.selectedRow | json}}</p></pre>
+  <hr />
+  <h5 class=" pt-1">Features</h5>
+  <hr />
+  <div class="row">
+    <ul>
+      <li>Client and server side sorting</li>
+      <li>Client and server side filter and pagination</li>
+      <li>Download grid as excel sheet</li>
+      <li>Inline gird actions</li>
+      <li>Double click row for default action</li>
+      <li>Drag and drop column ordering</li>
+      <li>Row selection feature</li>
+    </ul>
+  </div>
+</div>
+<!-- Grid Normal -->
