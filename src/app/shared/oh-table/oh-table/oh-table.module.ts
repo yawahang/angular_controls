@@ -15,6 +15,8 @@ import { ExcelExportService } from '../excel-export.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { OhTableComponent } from './oh-table.component';
 import { OhTableRowSelectionDirectiveModule } from '../oh-table-row-selection/oh-table-row-selection.module';
+import { CustomIconService } from '../custom-icon.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [OhTableComponent],
@@ -32,9 +34,10 @@ import { OhTableRowSelectionDirectiveModule } from '../oh-table-row-selection/oh
     DragDropModule,
     MatDialogModule,
     MatButtonModule,
+    HttpClientModule,
     OhTableRowSelectionDirectiveModule,
   ],
-  providers: [ExcelExportService],
+  providers: [ExcelExportService, CustomIconService],
   exports: [OhTableComponent],
 })
-export class OhTableModule {}
+export class OhTableModule { }

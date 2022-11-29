@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { OhTableDemoComponent } from './oh-table-demo/oh-table-demo.component';
 import { OhTableDemoModule } from './oh-table-demo/oh-table-demo.module';
 import { FormsModule } from '@angular/forms';
-import { CustomIconService } from './shared/oh-table/custom-icon.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,7 @@ import { CustomIconService } from './shared/oh-table/custom-icon.service';
 
     // import pages
   ],
-  providers: [CustomIconService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

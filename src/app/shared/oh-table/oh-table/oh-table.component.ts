@@ -422,5 +422,7 @@ export class OhTableComponent implements OnInit, OnDestroy {
     this.excelSrv.exportAsExcel(excelOpt);
   }
 
-  ngOnDestroy(): void { }
+  ngOnDestroy(): void {
+    this._unsubscribeAll.unsubscribe();
+  }
 }
